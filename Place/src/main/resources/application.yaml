@@ -1,0 +1,36 @@
+spring:
+ application:
+  name: Place
+
+ datasource:
+  url: jdbc:mysql://localhost:3306/pd_db?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+  username: eddi
+  password: eddi@123
+  driver-class-name: com.mysql.cj.jdbc.Driver
+
+ jpa:
+  properties:
+   hibernate:
+    dialect: org.hibernate.dialect.MySQL8Dialect
+    format_sql: true
+  open-in-view: false
+  database: mysql
+  show-sql: true
+  generate-ddl: true
+  hibernate:
+   ddl-auto: update
+
+server:
+ port: 7777
+
+eureka:
+ client:
+  register-with-eureka: true
+  fetch-registry: true
+  service-url:
+   defaultZone: http://localhost:9876/eureka/
+
+logging:
+ level:
+  com.netflix.discovery: DEBUG
+  org.springframework.cloud.netflix.eureka: DEBUG

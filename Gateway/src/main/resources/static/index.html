@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>키워드 추천 시스템</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script defer src="/js/main.js"></script>
+</head>
+<body>
+<div class="welcome-box">
+    <h1 class="brand-title">🚀 PlaceData</h1>
+    <p class="welcome-message">나만의 여행지를 키워드로 추천받아보세요.</p>
+</div>
+<div class="container">
+    <!-- 로그인 영역 -->
+    <div id="login-section">
+        <h2>로그인</h2>
+        <input id="userId" placeholder="아이디">
+        <input id="password" type="password" placeholder="비밀번호">
+        <button onclick="login()">로그인</button>
+        <button class="toggle-btn" onclick="toggleRegister()">회원가입</button>
+
+        <!-- 회원가입 폼 (기본은 닫힌 상태) -->
+        <div id="register-form" class="collapsed">
+            <h3>회원가입</h3>
+            <input id="register-userId" placeholder="아이디">
+            <input id="register-password" type="password" placeholder="비밀번호">
+            <input id="register-nickName" placeholder="닉네임">
+            <button onclick="register()">회원가입 완료</button>
+        </div>
+    </div>
+
+    <!-- 추천 영역 -->
+    <div id="recommend-section" class="hidden">
+        <h2>키워드 추천</h2>
+        <input id="keyword" placeholder="예: 여행지, 음식점 등">
+        <button onclick="recommend()">추천 받기</button>
+        <ul id="result-list"></ul>
+    </div>
+</div>
+</body>
+</html>

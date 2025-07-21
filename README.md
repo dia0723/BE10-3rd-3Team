@@ -1,2 +1,2 @@
-# BE10-3rd-3Team
-3rd project
+# msa-exercise-team3
+msa exercise
