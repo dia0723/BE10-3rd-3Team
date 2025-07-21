@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>마이페이지</title>
+    <link rel="stylesheet" href="/css/profile.css">
+    <script defer src="/js/profile.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<header class="top-nav">
+    <div class="logo">🏖 PlaceData</div>
+    <nav class="top-menu">
+        <button onclick="goToDashboard()">대시보드</button>
+        <button onclick="logout()">로그아웃</button>
+    </nav>
+</header>
+
+<main class="dashboard-main with-sidebar">
+    <!-- ✅ 왼쪽 메뉴 영역 -->
+    <div class="sidebar">
+        <button onclick="showSection('edit')">회원정보 수정</button>
+        <button onclick="showSection('delete')">회원탈퇴</button>
+    </div>
+
+    <!-- ✅ 오른쪽 컨텐츠 영역 -->
+    <div class="content-area">
+        <!-- 🔁 회원정보 수정 폼 -->
+        <!-- ✅ 회원정보 수정 섹션 -->
+        <section id="edit" class="profile-section hidden">
+            <h2>회원정보 수정</h2>
+            <p>수정할 내용을 입력하고 확인을 눌러주세요. ✏️</p>
+            <form id="profile-form">
+                <label for="edit-nickname">새 닉네임</label>
+                <input type="text" id="edit-nickname" placeholder="변경할 닉네임 입력" />
+
+                <label for="edit-current-password">현재 비밀번호</label>
+                <input type="password" id="edit-current-password" placeholder="현재 비밀번호 입력" required />
+
+                <label for="edit-new-password">새 비밀번호</label>
+                <input type="password" id="edit-new-password" placeholder="새 비밀번호 입력" required />
+
+                <button type="submit" class="primary">정보 수정</button>
+            </form>
+            <div id="profile-update-result" class="result-text"></div>
+        </section>
+
+        <!-- ✅ 회원탈퇴 섹션 -->
+        <section id="delete" class="profile-section hidden">
+            <h2>회원탈퇴</h2>
+            <p>정말 탈퇴하시겠습니까? 😢</p>
+            <form id="delete-form">
+                <label for="delete-password">비밀번호 확인</label>
+                <input type="password" id="delete-password" placeholder="현재 비밀번호" required />
+                <button type="submit" class="danger">탈퇴하기</button>
+            </form>
+            <div id="delete-result" class="result-text"></div>
+        </section>
+
+    </div>
+</main>
+</body>
+</html>
