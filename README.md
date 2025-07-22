@@ -53,7 +53,7 @@ Tomcat에서 서빙되며, 로그인, 회원가입, 여행지 추천, 리뷰 관
 
 ## 🔐 인증 흐름
 
-1. 소셜 로그인 → accessToken 발급
+1. 로그인 → redis -> userToken 발급
 2. localStorage에 `userToken` 저장
 3. 이후 모든 요청 시 `Authorization: Bearer {token}` 헤더 전송
 4. 백엔드 MSA API와 연동
@@ -75,8 +75,8 @@ axios.get("/api/account/info", {
 | 회원가입           | `/account/register`           |
 | 장소 등록/조회     | `/place/register`, `/place/list` |
 | 추천 조회          | `/recommend/list/keyword`     |
-| 사용자 정보 수정    | `/account/update`             |
-| 사용자 정보 삭제    | `/account/delete`             |
+| 회원정보 수정       | `/account/update`             |
+| 회원정보 탈퇴       | `/account/delete`             |
 
 ---
 
