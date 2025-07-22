@@ -1,8 +1,8 @@
-# 🌐 MSA Frontend (Static Web on Tomcat)
+# 🌐 MSA Project (Team PlaceData)
 
 ## 📌 프로젝트 개요
 
-이 프로젝트는 **MSA (Microservice Architecture)** 백엔드 시스템과 연동되는 정적 웹 기반 **프론트엔드 인터페이스**입니다.  
+본 프로젝트는 **MSA (Microservice Architecture)** 백엔드 시스템과 연동되는 정적 웹 기반 **프론트엔드 인터페이스**입니다.  
 Tomcat에서 서빙되며, 로그인, 회원가입, 여행지 추천, 리뷰 관리 등 다양한 기능을 제공합니다.
 
 ---
@@ -17,9 +17,8 @@ Tomcat에서 서빙되며, 로그인, 회원가입, 여행지 추천, 리뷰 관
 │   ├── main.js           # 로그인/회원가입
 │   ├── dashboard.js      # 대시보드 기능
 │   └── util.js           # 토큰 처리 유틸
-├── img/                  # 이미지 리소스
 ├── index.html            # 로그인 진입 페이지
-├── signup-agreement.html # 신규 유저 약관 동의
+├── profile.html          # 로그인 후 사용자정보 수정
 └── dashboard.html        # 로그인 후 대시보드
 ```
 
@@ -101,7 +100,7 @@ axios.get("/api/account/info", {
 ## 📝 기타
 
 - 모든 페이지는 RESTful API 기반이며, Backend 서비스는 각각 Account, Place, Recommend, Review 등으로 분리되어 있음.
-- 이 프론트는 Gateway를 통해 API 요청을 전달하며, 별도 인증/보안 처리는 백엔드에서 수행.
+- 해당 프론트는 Gateway를 통해 API 요청을 전달하며, 별도 인증/보안 처리는 백엔드에서 수행.
 
 ---
 
